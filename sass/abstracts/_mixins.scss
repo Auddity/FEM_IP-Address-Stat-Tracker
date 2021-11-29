@@ -1,0 +1,7 @@
+@mixin textColor($color) {
+  @if(brightness($color) > 50) {
+    color: #010101;
+  } @else {
+    color: #fefefe;
+  }
+}
