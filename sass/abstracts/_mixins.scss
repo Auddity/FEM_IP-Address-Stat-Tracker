@@ -1,7 +1,7 @@
-@mixin textColor($color) {
-  @if(brightness($color) > 50) {
-    color: #010101;
+@function textColor($color) {
+  @if(lightness($color) > 50) {
+    @return #010101;
   } @else {
-    color: #fefefe;
+    @return #fefefe;
   }
-}
+};

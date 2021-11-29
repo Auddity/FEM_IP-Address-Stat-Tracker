@@ -1,0 +1,7 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+
+.header {
+  height: 30%;
+  background-color: red;
+}
