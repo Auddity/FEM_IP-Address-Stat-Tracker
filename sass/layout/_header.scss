@@ -6,12 +6,51 @@
   background: v.$headerBackground
     url('../images/pattern-bg.png') 
     no-repeat 
+    center
     center / cover;
 
   h1 {
     text-align: center;
-    font-size: 3.2rem;
+    font-size: 3.3rem;
+    font-weight: 500;
     color: mx.textColor(v.$headerBackground);
-    padding-block-start: 3rem;
+    padding-block: 3.3rem;
+  }
+
+  .form {
+    width: 80%;
+    margin-inline: auto;
+
+    &-control {
+      display: block;
+      position: relative;
+
+      .input-text {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 1.5rem;
+        font-size: 1.6rem;
+        color: v.$DarkGray;
+      }
+
+      .input {
+        width: 100%;
+        padding-block: 2rem;
+        border: none;
+        border-radius: 1.5rem;
+      }
+
+      .btn {
+        position: absolute;
+        right: 0;
+        background-color: rgb(0, 0, 0);
+        padding: 2rem;
+        border: none;
+        border-top-right-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+      }
+    }
+
   }
 }
