@@ -1,7 +1,15 @@
+@use 'variables' as v;
+
 @function textColor($color) {
-  @if(lightness($color) > 50) {
+  @if(lightness($color) < 60) {
     @return #fefefe;
   } @else {
-    @return #010101;
+    @return v.$VeryDarkGray;
   }
 };
+
+@mixin mq($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}

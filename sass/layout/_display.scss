@@ -6,8 +6,29 @@
   top: 20%;
   left: 10%;
   width: 80%;
-  height: 18rem;
   background-color: #fefefe;
+  text-align: center;
+  padding-block: 1.5rem;
   border-radius: 1.5rem;
+  box-shadow: 0 2px 8px 2px rgba(0,0,0, 0.14);
   z-index: 1;
+
+  &-section {
+    padding-block: 1rem;
+
+    &-title {
+      display: block;
+      text-transform: uppercase;
+      color: v.$DarkGray;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: .2rem;
+      padding-block: 1rem;
+    }
+
+    &-value {
+      color: mx.textColor(#fefefe);
+      font-weight: 700;
+    }
+  }
 }
