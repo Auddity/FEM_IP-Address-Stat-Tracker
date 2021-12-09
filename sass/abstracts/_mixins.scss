@@ -1,5 +1,17 @@
 @use 'variables' as v;
 
+@mixin mq($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin mqh($size) {
+  @media only screen and (max-height: $size) {
+    @content;
+  }
+}
+
 @function textColor($color) {
   @if(lightness($color) < 60) {
     @return #fefefe;
@@ -7,9 +19,3 @@
     @return v.$VeryDarkGray;
   }
 };
-
-@mixin mq($size) {
-  @media only screen and (min-width: $size) {
-    @content;
-  }
-}
