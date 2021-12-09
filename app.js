@@ -29,6 +29,8 @@ const getLocOnLoad = (lat, long) => {
             long = data.location.lng;
             newMap(lat, long);
             display(data);
+        }).catch(err => {
+            err(console.log('Blocked by Client'));
         });
 };
 
