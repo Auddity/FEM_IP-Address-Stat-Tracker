@@ -9,26 +9,26 @@ const ispDisplay = document.getElementById('isp-value');
 
 const mapContainer = document.querySelector('.map-container');
 
-// let lat = 42.096;
-// let long = -79.236;
-
 let lat;
 let long;
+
+// Display
+const display = (data) => {
+    ipDisplay.textContent = `${data.ip}`;
+    locationDisplay.textContent = `${data.location.region}`;
+    timezoneDisplay.textContent = `UTC ${data.location.timezone}`
+    ispDisplay.textContent = `${data.isp}`;
+}
 
 // Location On Load
 const getLocOnLoad = (lat, long) => {
     fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_MymqsTtuG8SAD5sJKUXPTV80DVOkG`)
         .then(res => res.json())
         .then(data => {
-            ipDisplay.textContent = `${data.ip}`;
-            locationDisplay.textContent = `${data.location.region}`;
-            timezoneDisplay.textContent = `UTC ${data.location.timezone}`
-            ispDisplay.textContent = `${data.isp}`;
-
             lat = data.location.lat;
             long = data.location.lng;
-                
             newMap(lat, long);
+            display(data);
         });
 };
 
@@ -40,15 +40,10 @@ const getIpData = () => {
         fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_MymqsTtuG8SAD5sJKUXPTV80DVOkG&ipAddress&domain=${search}`)
             .then(res => res.json())
             .then(data => {
-                ipDisplay.textContent = `${data.ip}`;
-                locationDisplay.textContent = `${data.location.region}`;
-                timezoneDisplay.textContent = `UTC ${data.location.timezone}`
-                ispDisplay.textContent = `${data.isp}`;
-
                 lat = data.location.lat;
                 long = data.location.lng;
-                
                 newMap(lat, long);
+                display(data);
             }).catch(() => {
                 alert('Enter Valid IP Address');
                 newMap(lat, long);
@@ -80,14 +75,12 @@ const newMap = (lat, long) => {
     }).addTo(map);
 };
 
-// Re Initialize Map After Search
+// Check for Map After Search
 const checkForMap = e => {
     e.preventDefault();
-
     if(map != null) {
         map.remove();
     } 
-
     getIpData();
 }
 
@@ -97,8 +90,7 @@ input.addEventListener('focus', () => {
 });
 input.addEventListener('blur', () => {
     text.style.display = 'block';
-})
+});
 
 document.addEventListener('DOMContentLoaded', getLocOnLoad(lat, long));
 submit.addEventListener('submit', checkForMap);
-
