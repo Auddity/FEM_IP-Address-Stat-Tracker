@@ -20,9 +20,6 @@
   .form {
     width: min(39rem, 80%);
     margin-inline: auto;
-    @include mx.mq(900px) {
-      width: 40%;
-    }
 
     &-control {
       display: block;

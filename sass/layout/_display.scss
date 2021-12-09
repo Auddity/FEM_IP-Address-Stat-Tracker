@@ -12,37 +12,13 @@
   border-radius: 1.5rem;
   box-shadow: 0 2px 8px 2px rgba(0,0,0, 0.14);
   z-index: 1;
-  @include mx.mq(900px) {
-    top: 22%;
-    display: flex;
-    justify-content: center;
-    padding-block: 3.5rem;
-  }
-  @include mx.mqh(812px) {
-    top: 17rem;
-    padding-block: 1rem;
-  }
 
   .divider {
     display: none;
-    @include mx.mq(900px) {
-      display: block;
-      height: 7rem;
-      width: 1.2px;
-      background-color: rgba(0,0,0,0.25);
-      margin-block: auto;
-    }
   }
 
   &-section {
     padding-block: 1rem;
-    @include mx.mq(900px) {
-      text-align: left;
-      padding-inline: 5rem;
-    }
-    @include mx.mqh(667px) {
-      padding-block: 0;
-    }
 
     &-title {
       display: block;
@@ -52,20 +28,12 @@
       font-weight: 700;
       letter-spacing: .2rem;
       padding-block: 1rem;
-      @include mx.mq(900px) {
-        font-size: 1.5rem;
-        font-weight: 500;
-      }
     }
 
     &-value {
       color: mx.textColor(#fefefe);
       font-weight: 500;
       font-size: 2rem;
-      @include mx.mq(900px) {
-        font-size: 2.6rem;
-        line-height: 3.3rem;
-      }
     }
   }
 }

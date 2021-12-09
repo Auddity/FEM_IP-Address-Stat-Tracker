@@ -1,0 +1,51 @@
+// Header - width
+@include mx.mq(900px) {
+  .form {
+    width: 40%;
+  }
+}
+
+// Display - width
+@include mx.mq(900px) {
+  .display {
+    top: 22%;
+    display: flex;
+    justify-content: center;
+    padding-block: 3.5rem;
+
+    .divider {
+      display: block;
+      height: 7rem;
+      width: 1.2px;
+      background-color: rgba(0,0,0,0.25);
+      margin-block: auto;
+    }
+
+    &-section {
+      text-align: left;
+      padding-inline: 5rem;
+
+      &-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+
+      &-value {
+        font-size: 2rem;
+        line-height: 3.3rem;
+      }
+    }
+  }
+}
+
+// Display - height
+@include mx.mqh(667px) {
+  .display {
+    top: 17rem;
+    padding-block: 1rem;
+
+    &-section {
+      padding-block: 0;
+    }
+  }
+}
