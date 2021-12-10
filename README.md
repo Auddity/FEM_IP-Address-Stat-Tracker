@@ -32,7 +32,7 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 
  The trick after learning to remove the map before reinitializing it was to figure out where in the order of function calls it should go.  
 
- Turned out a simple check for the map then call the function that searches for the IP, and the generate map function within that.
+ Turned out a simple check for the map then call the function that searches for the IP, and then generate map function within that.
 
  ```js
 const checkForMap = e => {
