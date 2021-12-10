@@ -1,9 +1,4 @@
-// Header - width
-@include mx.mq(900px) {
-  .form {
-    width: 40%;
-  }
-}
+@use '../abstracts/mixins' as mx;
 
 // Display - width
 @include mx.mq(900px) {

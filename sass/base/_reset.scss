@@ -13,3 +13,8 @@ body {
   font-size: 1.8rem;
   height: 100vh;
 }
+
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
