@@ -26,7 +26,7 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 
  ### What I learned
 
- LEARNING UPDATE (7/24/22):  Set up a server to make the fetch request to, the `server.js` makes API calls.  This was done to hide the api key.
+ LEARNING UPDATE (7/24/22):  Set up a server to make the fetch request to, the `server.js` makes API calls.  environment added to Vercel.
  
  First and foremost was learning about API keys.  Also learning to interact with Leaflet's API was fun and I look forward to working with it some more.
 
