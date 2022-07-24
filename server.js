@@ -10,6 +10,7 @@ app.use(express.json())
 const KEY = process.env.IPIFY_KEY
 const TOKEN = process.env.MAPBOX_TOKEN
 
+// On Load Call
 app.get('/geoloc', (req, res) => {
   const onLoadOptions = {
     method: 'GET',
@@ -24,7 +25,7 @@ app.get('/geoloc', (req, res) => {
   })
 })
 
-// Below not likely
+// Search Call
 app.get('/geoloc/:search', (req, res) => {
   const { search } = req.params;
   const modSearch = search.slice(1, search.length);
