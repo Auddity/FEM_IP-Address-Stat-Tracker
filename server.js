@@ -40,7 +40,7 @@ app.get('/geoloc/:search', (req, res) => {
     console.log(response.data)
     res.json(response.data)
   }).catch(err => {
-    console.log(err)
+    alert(err)
   })
 })
 
