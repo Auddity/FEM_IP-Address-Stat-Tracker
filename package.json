@@ -1,0 +1,27 @@
+{
+  "name": "dist",
+  "version": "1.0.0",
+  "description": "This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0).",
+  "main": "app.js",
+  "scripts": {
+    "start:backend": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Auddity/FEM_IP-Address-Stat-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Auddity/FEM_IP-Address-Stat-Tracker/issues"
+  },
+  "homepage": "https://github.com/Auddity/FEM_IP-Address-Stat-Tracker#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}

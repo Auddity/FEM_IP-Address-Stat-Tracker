@@ -22,7 +22,7 @@ const display = (data) => {
 
 // Location On Load
 const getLocOnLoad = (lat, long) => {
-    fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_MymqsTtuG8SAD5sJKUXPTV80DVOkG`)
+    fetch(`http://localhost:8000/geoloc`)
         .then(res => res.json())
         .then(data => {
             lat = data.location.lat;
@@ -30,7 +30,7 @@ const getLocOnLoad = (lat, long) => {
             newMap(lat, long);
             display(data);
         }).catch(err => {
-            err(console.log('Blocked by Client'));
+            alert(err)
         });
 };
 
@@ -39,20 +39,20 @@ const getIpData = () => {
     const search = input.value;
     
     if(search) {
-        fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_MymqsTtuG8SAD5sJKUXPTV80DVOkG&ipAddress&domain=${search}`)
-            .then(res => res.json())
-            .then(data => {
-                lat = data.location.lat;
-                long = data.location.lng;
-                newMap(lat, long);
-                display(data);
-            }).catch(() => {
-                alert('Enter Valid IP Address');
-                newMap(lat, long);
-            });
-    } else {
-        alert('Search cannot be empty');
-    }
+        fetch(`http://localhost:8000/geoloc/:${search}`)
+        .then(res => res.json())
+        .then(data => {
+            lat = data.location.lat;
+            long = data.location.lng;
+            newMap(lat, long);
+            display(data);
+        }).catch(err => {
+            console.log(err);
+            // alert('Enter Valid IP Address');
+            newMap(lat, long);
+        })} else {
+            alert('Search cannot be empty');
+        }
 
     input.value = '';
 };  
@@ -94,5 +94,5 @@ input.addEventListener('blur', () => {
     text.style.display = 'block';
 });
 
-document.addEventListener('DOMContentLoaded', getLocOnLoad(lat, long));
+// document.addEventListener('DOMContentLoaded', getLocOnLoad(lat, long));
 submit.addEventListener('submit', checkForMap);

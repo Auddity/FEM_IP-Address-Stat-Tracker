@@ -34,6 +34,8 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 
  Turned out a simple check for the map then call the function that searches for the IP, and then generate map function within that.
 
+ LEARNING UPDATE (7/24/22):  Set up a server to make the fetch request to, the `server.js` makes API calls.  This was done to hide the api key.
+
  ```js
 const checkForMap = e => {
     e.preventDefault();
