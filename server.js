@@ -21,6 +21,7 @@ app.get('/geoloc', (req, res) => {
   axios.request(onLoadOptions).then(response => {
     res.json(response.data)
   }).catch(err => {
+    console.log(err);
     alert(err)
   })
 })
@@ -37,9 +38,9 @@ app.get('/geoloc/:search', (req, res) => {
   }
 
   axios.request(searchOptions).then(response => {
-    console.log(response.data)
     res.json(response.data)
   }).catch(err => {
+    console.log(err);
     alert(err)
   })
 })

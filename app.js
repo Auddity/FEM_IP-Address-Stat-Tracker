@@ -30,6 +30,7 @@ const getLocOnLoad = (lat, long) => {
             newMap(lat, long);
             display(data);
         }).catch(err => {
+            console.log(err)
             alert(err)
         });
 };
@@ -94,5 +95,5 @@ input.addEventListener('blur', () => {
     text.style.display = 'block';
 });
 
-// document.addEventListener('DOMContentLoaded', getLocOnLoad(lat, long));
+document.addEventListener('DOMContentLoaded', getLocOnLoad(lat, long));
 submit.addEventListener('submit', checkForMap);
