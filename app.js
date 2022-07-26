@@ -48,8 +48,7 @@ const getIpData = () => {
             newMap(lat, long);
             display(data);
         }).catch(err => {
-            console.log(err);
-            // alert('Enter Valid IP Address');
+            alert(err)
             newMap(lat, long);
         })} else {
             alert('Search cannot be empty');
@@ -74,6 +73,7 @@ const newMap = (lat, long) => {
         id: 'mapbox/streets-v11',
         tileSize: 512,
         zoomOffset: -1,
+        // Will only work with one URL
         accessToken: 'pk.eyJ1IjoiYXVkZGl0eSIsImEiOiJja3dwNHNrYm0wOWFyMnVxa2FsYThzeWRzIn0.kABzAZLo21TAdRYScR26Mg'
     }).addTo(map);
 };

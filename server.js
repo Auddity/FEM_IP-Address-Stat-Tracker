@@ -8,7 +8,6 @@ app.use(cors())
 app.use(express.json())
 
 const KEY = process.env.IPIFY_KEY
-const TOKEN = process.env.MAPBOX_TOKEN
 
 // On Load Call
 app.get('/geoloc', (req, res) => {
@@ -40,7 +39,6 @@ app.get('/geoloc/:search', (req, res) => {
   axios.request(searchOptions).then(response => {
     res.json(response.data)
   }).catch(err => {
-    console.log(err);
     alert(err)
   })
 })
